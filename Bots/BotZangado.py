@@ -17,12 +17,12 @@ class BotZangado(Bot):
         return 'Meu nome é',self.__nome,'e e estou com muita RAIVA!!'
     def mostra_comandos(self):
         print('1: Ola, tudo bem?')
-        print('Come você está?')
-        print('Me de um conselho')
-        print('Adeus')
+        print('2: Come você está?')
+        print('3: Me de um conselho')
+        print('4: Adeus')
     
     def executa_comando(self,cmd):
-        print('     --> Eu te respondo: ', end='')
+        
         if cmd == 1:
             print('E o que tem de bom?!')
         elif cmd == 2:
@@ -37,4 +37,5 @@ class BotZangado(Bot):
 
     def despedida(self):
         return 'Finalmente, até nunca mais '
+
 

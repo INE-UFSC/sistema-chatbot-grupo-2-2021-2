@@ -22,7 +22,6 @@ class Bot(ABC):
 
     def mostra_comandos(self) -> str:
         comandos = '# Comandos \n'
-        print(self.comandos)
         for cmd, value in self.comandos.items():
             comandos += f'[{cmd}]: {getattr(Bot, value)()} \n'
         return comandos

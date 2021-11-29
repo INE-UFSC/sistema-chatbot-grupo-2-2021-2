@@ -21,8 +21,8 @@ class Bot(ABC):
         return self.__comandos
 
     def mostra_comandos(self) -> None:
-        for value in self.comandos.items():
-            print(value)
+        for comando in self.comandos.items():
+            print(comando)
 
     @abstractmethod
     def executa_comando(self, cmd):

@@ -35,7 +35,6 @@ class SistemaChatBot:
         self.__bot = self.__lista_bots[bot_escolhido - 1]
 
     def mostra_comandos_bot(self):
-        print('SISTEMA -> Mostra comandos')
         self.__bot.mostra_comandos()
 
     def le_envia_comando(self):

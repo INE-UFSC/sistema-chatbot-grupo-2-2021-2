@@ -44,7 +44,7 @@ class SistemaChatBot:
         if comando_escolhido == '-1':
             return True  # Retornando True para fechar o programa
         else:
-            self.__bot.executa_comando(comando_escolhido)
+            print(self.__bot.executa_comando(comando_escolhido))
             return False  # Retornando False para continuar o programa
 
     def inicio(self):

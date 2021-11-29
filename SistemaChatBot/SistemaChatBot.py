@@ -35,7 +35,7 @@ class SistemaChatBot:
         self.__bot = self.__lista_bots[bot_escolhido - 1]
 
     def mostra_comandos_bot(self):
-        self.__bot.mostra_comandos()
+        print(self.__bot.mostra_comandos())
 
     def le_envia_comando(self):
         comando_escolhido = input(
@@ -54,7 +54,7 @@ class SistemaChatBot:
         print(self.__bot.boas_vindas())
         print()
         while True:
-            print(self.mostra_comandos_bot())
+            self.mostra_comandos_bot()
             fechar_programa = self.le_envia_comando()
 
             if fechar_programa:

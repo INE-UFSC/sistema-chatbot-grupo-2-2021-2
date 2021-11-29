@@ -51,10 +51,10 @@ class SistemaChatBot:
         self.boas_vindas()
         self.mostra_menu()
         self.escolhe_bot()
-        self.__bot.boas_vindas()
+        print(self.__bot.boas_vindas())
         print()
         while True:
-            self.mostra_comandos_bot()
+            print(self.mostra_comandos_bot())
             fechar_programa = self.le_envia_comando()
 
             if fechar_programa:

@@ -4,8 +4,8 @@ from abc import ABC, abstractmethod
 class Bot(ABC):
     def __init__(self, nome):
         self.__nome = nome
-        self.__comandos = {"Boas vindas": "boas_vindas",
-                           "Despedida": "despedida"}
+        self.__comandos = {"1": "Boas vindas",
+                           "2": "Despedida"}
 
     @property
     def nome(self):
@@ -22,7 +22,7 @@ class Bot(ABC):
     def mostra_comandos(self) -> str:
         comandos = '# Comandos \n'
         for cmd, value in self.comandos.items():
-            comandos += f'[{cmd}]: {getattr(Bot, value)()} \n'
+            comandos += f'[{cmd}]: {value} \n'
         return comandos
 
     @abstractmethod

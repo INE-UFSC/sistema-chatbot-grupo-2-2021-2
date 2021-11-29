@@ -1,6 +1,5 @@
 from Bots.Bot import Bot
 
-
 class BotZangado(Bot):
     def __init__(self, nome):
         super().__init__(nome)

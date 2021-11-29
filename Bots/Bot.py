@@ -20,11 +20,9 @@ class Bot(ABC):
     def comandos(self):
         return self.__comandos
 
-    def mostra_comandos(self) -> str:
-        comandos = '# Comandos \n'
-        for cmd, value in self.comandos.items():
-            comandos += f'[{cmd}]: {getattr(Bot, value)()} \n'
-        return comandos
+    def mostra_comandos(self) -> None:
+        for comando in self.comandos.items():
+            print(comando)
 
     @abstractmethod
     def executa_comando(self, cmd):

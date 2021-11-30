@@ -1,5 +1,6 @@
 from Bots.Bot import Bot
 
+
 class BotLegal(Bot):
     def __init__(self, nome):
         super().__init__(nome)
@@ -12,8 +13,8 @@ class BotLegal(Bot):
 
     def apresentacao(self):
         return "Olá! Eu sou o Bot Legal, podemos ser amigos?"
-    
-    def executa_comando(self,cmd):
+
+    def executa_comando(self, cmd):
         if cmd == "1":
             return f'{self.nome} diz: Bomm diaaa flor do dia s2 s2 s2, o sol está lindo hoje'
         elif cmd == "2":

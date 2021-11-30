@@ -12,10 +12,6 @@ class BotJose(Bot):
     def comandos(self):
         return self.__comandos
 
-    @property
-    def comandos(self):
-        return self.__comandos
-
     def apresentacao(self):
         return f'Mensagem de apresentação: Olá, eu sou o José, seu bot conselheiro'
  

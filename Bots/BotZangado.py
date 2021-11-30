@@ -2,13 +2,9 @@ from Bots.Bot import Bot
 
 class BotZangado(Bot):
     def __init__(self, nome):
-        super().__init__(nome)
-        self.__comandos = {"1": "Olá, tudo bem ? ",
-                           "2": "Como você está ?", "3": "Quero um conselho", "4": "Adeus"}
-
-    @property
-    def comandos(self):
-        return self.__comandos
+        comandos = {"1": "Olá, tudo bem ? ", "2": "Como você está ?",
+                "3": "Quero um conselho", "4": "Adeus"}
+        super().__init__(nome, comandos)
 
     def apresentacao(self):
         return f'GRRRRRR Meu nome é {self.nome} e não me incomode!'

@@ -20,13 +20,13 @@ class BotTriste(Bot):
         return("1 - Bom dia\n2 - Qual o seu nome?\n3 - Quero um conselho\n4 - Adeus")
 
     def executa_comando(self, cmd):
-        if cmd == 1:
+        if cmd == '1':
             return(self.boas_vindas())
-        if cmd == 2:
+        if cmd == '2':
             return(f"Eu sou {self.nome}, perguntas repetidas me deixam triste e cansado")
-        if cmd == 3:
+        if cmd == '3':
             return(self.conselho())
-        if cmd == 4:
+        if cmd == '4':
             return(self.despedida())
         else:
             return ("Comando inválido")

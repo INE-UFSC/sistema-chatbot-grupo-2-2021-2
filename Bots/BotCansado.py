@@ -1,8 +1,9 @@
 from Bots.Bot import Bot
 from random import randint
 
+
 class BotCansado(Bot):
-    def __init__(self,nome):
+    def __init__(self, nome):
         self.__nome = nome
 
     @property
@@ -15,13 +16,13 @@ class BotCansado(Bot):
 
     def apresentacao(self):
         return "Olá, pronto para o próximo comando."
- 
+
     def mostra_comandos(self):
         comandos = {
-                "1": "Apresentar",
-                "2": "Mostrar um conselho",
-                "3": "Mostrar despedida"
-                }
+            "1": "Apresentar",
+            "2": "Mostrar um conselho",
+            "3": "Mostrar despedida"
+        }
         numero_de_comandos = len(comandos)
         mensagem = ""
         for numero, texto in comandos.items():
@@ -30,8 +31,8 @@ class BotCansado(Bot):
             if tem_proxima_linha:
                 mensagem += "\n"
         return mensagem
-    
-    def executa_comando(self,cmd):
+
+    def executa_comando(self, cmd):
         if cmd == "1":
             return self.apresentacao()
         elif cmd == "2":
@@ -46,17 +47,17 @@ class BotCansado(Bot):
 
     def despedida(self):
         return "Foi um prazer. Volte sempre."
-    
+
     def mostra_conselho(self):
         conselhos = (
-                "Estude ao menos 1 hora por dia.",
-                "Programe computador todos os dias",
-                "Faça ao menos 30 minutos de atividade física por dia.",
-                ("Mantenha uma alimentação saudável com frutas, legumes e"
-                    + " vegetais todos os dias."),
-                ("Use máscara para impedir a propagação de epidemias"
-                    + " respiratórias.")
-                )
+            "Estude ao menos 1 hora por dia.",
+            "Programe computador todos os dias",
+            "Faça ao menos 30 minutos de atividade física por dia.",
+            ("Mantenha uma alimentação saudável com frutas, legumes e"
+             + " vegetais todos os dias."),
+            ("Use máscara para impedir a propagação de epidemias"
+             + " respiratórias.")
+        )
         indice_aleatorio = randint(0, len(conselhos) - 1)
         conselho_aleatorio = conselhos[indice_aleatorio]
         return conselho_aleatorio

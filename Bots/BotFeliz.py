@@ -3,8 +3,8 @@ from Bots.Bot import Bot
 class BotFeliz(Bot):
     def __init__(self, nome):
         super().__init__(nome)
-        self.__comandos = {"1": "Olá, tudo bem ? ",
-                           "2": "Como você está ?", "3": "Quero um conselho", "4": "Adeus"}
+        self.__comandos = {"1": "Bom dia",
+                           "2": "Qual seu nome?", "3": "Quero um conselho", "4": "Adeus"}
 
     @property
     def comandos(self):

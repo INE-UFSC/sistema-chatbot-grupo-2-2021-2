@@ -4,10 +4,14 @@ from Bots.Bot import Bot
 class BotManezinho(Bot):
     def __init__(self, nome):
         self.__nome = nome
-        self.__comandos = {"Ô meu querido, quesh saber quantas praias existem na nossa linda ilha da magia?": "\nA nossa belíssima ilha conta com incríveis 42 praias!",
-                           "Essa é complicada, Avaí ou Figueira?": "\nFuracão ou Leão? Essa é difícil hein!",
-                           "Mofas com a pomba na balaia?": "\nÔ meu querido, isso significa que a pessoa não vai alcançar o seu objetivo, tendesse?",
-                           "O que é bucica?": "\nBucica é como a gente chama as nossas cadelinhas aqui da ilha!"}
+        self.__comandos = {'1': "Ô meu querido, quesh saber quantas praias existem na nossa linda ilha da magia?",
+                           '2': "Essa é complicada, Avaí ou Figueira?",
+                           '3': "Mofas com a pomba na balaia?",
+                           '4': "O que é bucica?"}
+        self.__respostas = {"Ô meu querido, quesh saber quantas praias existem na nossa linda ilha da magia?": "\nA nossa belíssima ilha conta com incríveis 42 praias!",
+                            "Essa é complicada, Avaí ou Figueira?": "\nFuracão ou Leão? Essa é difícil hein!",
+                            "Mofas com a pomba na balaia?": "\nÔ meu querido, isso significa que a pessoa não vai alcançar o seu objetivo, tendesse?",
+                            "O que é bucica?": "\nBucica é como a gente chama as nossas cadelinhas aqui da ilha!"}
 
     @property
     def nome(self):
@@ -26,13 +30,13 @@ class BotManezinho(Bot):
 
     def executa_comando(self, cmd):
         if cmd == '1':
-            return self.comandos["Ô meu querido, quesh saber quantas praias existem na nossa linda ilha da magia?"]
+            return self.__respostas["Ô meu querido, quesh saber quantas praias existem na nossa linda ilha da magia?"]
         elif cmd == '2':
-            return self.comandos["Essa é complicada, Avaí ou Figueira?"]
+            return self.__respostas["Essa é complicada, Avaí ou Figueira?"]
         elif cmd == '3':
-            return self.comandos["Mofas com a pomba na balaia?"]
+            return self.__respostas["Mofas com a pomba na balaia?"]
         elif cmd == '4':
-            return self.comandos["O que é bucica?"]
+            return self.__respostas["O que é bucica?"]
         else:
             return "Uhhh seu tanso! Não é assim não, pô!"
 

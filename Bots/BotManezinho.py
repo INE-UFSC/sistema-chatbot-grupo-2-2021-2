@@ -25,19 +25,16 @@ class BotManezinho(Bot):
         return f"Ó-lhó-lhó, me chamo {self.__nome}. Quex conversar comigo?"
 
     def executa_comando(self, cmd):
-        try:
-            if cmd == 1:
-                print(
-                    self.comandos["Ô meu querido, quesh saber quantas praias existem na nossa linda ilha da magia?"])
-            elif cmd == 2:
-                print(self.comandos["Essa é complicada, Avaí ou Figueira?"])
-            elif cmd == 3:
-                print(self.comandos["Mofas com a pomba na balaia?"])
-            elif cmd == 4:
-                print(self.comandos["O que é bucica?"])
-
-        except:
-            print("Uhhh seu tanso! Não é assim não, pô!")
+        if cmd == '1':
+            return self.comandos["Ô meu querido, quesh saber quantas praias existem na nossa linda ilha da magia?"]
+        elif cmd == '2':
+            return self.comandos["Essa é complicada, Avaí ou Figueira?"]
+        elif cmd == '3':
+            return self.comandos["Mofas com a pomba na balaia?"]
+        elif cmd == '4':
+            return self.comandos["O que é bucica?"]
+        else:
+            return "Uhhh seu tanso! Não é assim não, pô!"
 
     def boas_vindas(self):
         return f"Me excolhesse mesmo, és um baita, feio!"

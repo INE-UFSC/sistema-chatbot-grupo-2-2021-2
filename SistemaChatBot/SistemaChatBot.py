@@ -5,11 +5,10 @@ class SistemaChatBot:
     def __init__(self, nomeEmpresa, lista_bots):
         self.__empresa = nomeEmpresa
         self.__bot = None
-
+        self.__lista_bots = []
         for bot in lista_bots:
-            if not isinstance(bot, Bot):
-                raise Exception('Tipo de BOT inválido')
-        self.__lista_bots = lista_bots
+            if isinstance(bot, Bot):
+                self.__lista_bots.append(bot)
 
     def boas_vindas(self):
         print(

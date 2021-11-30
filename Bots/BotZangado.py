@@ -17,7 +17,7 @@ class BotZangado(Bot):
         if cmd == '1':
             return f' {self.nome} diz: E o que tem de bom?!'
         elif cmd == '2':
-            return f' {self.nome} diz: Não interesa!'
+            return f' {self.nome} diz: Não interessa!'
         elif cmd == '3':
             return f' {self.nome} diz:Não tenho filho deste tamanho!'
         elif cmd == '4':

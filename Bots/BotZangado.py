@@ -15,11 +15,11 @@ class BotZangado(Bot):
 
     def executa_comando(self, cmd):
         if cmd == '1':
-            return f'E o que tem de bom?!'
+            return f' {self.nome} diz: E o que tem de bom?!'
         elif cmd == '2':
-            return f'Não interesa!'
+            return f' {self.nome} diz: Não interesa!'
         elif cmd == '3':
-            return f'Não tenho filho deste tamanho'
+            return f' {self.nome} diz:Não tenho filho deste tamanho!'
         elif cmd == '4':
             return self.despedida()
         else:

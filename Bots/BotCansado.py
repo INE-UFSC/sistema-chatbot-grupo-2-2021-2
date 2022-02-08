@@ -1,10 +1,23 @@
 from Bots.Bot import Bot
 from random import randint
+from Bots.Comando import Comando
+from Database.BotDAO import DAO
 
 
 class BotCansado(Bot):
     def __init__(self, nome):
         self.__nome = nome
+        self.__json_path = "Database/BotCansado"
+        self.__dao = DAO(self.__json_path)
+        self.__comandos = []
+
+        comandos = self.__dao.get_all()
+
+        try:
+            for key, value in comandos.items():
+                self.__comandos.append(Comando(key, value[0], value[1]))
+        except Exception as e:
+            print(e)
 
     @property
     def nome(self):
@@ -18,46 +31,20 @@ class BotCansado(Bot):
         return "Olá, pronto para o próximo comando."
 
     def mostra_comandos(self):
-        comandos = {
-            "1": "Apresentar",
-            "2": "Mostrar um conselho",
-            "3": "Mostrar despedida"
-        }
-        numero_de_comandos = len(comandos)
         mensagem = ""
-        for numero, texto in comandos.items():
-            mensagem += f"{numero} - {texto}"
-            tem_proxima_linha = numero != numero_de_comandos
-            if tem_proxima_linha:
-                mensagem += "\n"
+        for comando in self.__comandos:
+            mensagem += f"{comando.id} - {comando.mensagem} \n"
         return mensagem
 
     def executa_comando(self, cmd):
-        if cmd == "1":
-            return self.apresentacao()
-        elif cmd == "2":
-            return self.mostra_conselho()
-        elif cmd == "3":
-            return self.despedida()
-        else:
-            return 'Comando não encontrado'
+        for comando in self.__comandos:
+            if comando.id == cmd:
+                return comando.getRandomResposta()
+
+        return 'Comando não encontrado'
 
     def boas_vindas(self):
         return "Seja bem-vindo(a)."
 
     def despedida(self):
         return "Foi um prazer. Volte sempre."
-
-    def mostra_conselho(self):
-        conselhos = (
-            "Estude ao menos 1 hora por dia.",
-            "Programe computador todos os dias",
-            "Faça ao menos 30 minutos de atividade física por dia.",
-            ("Mantenha uma alimentação saudável com frutas, legumes e"
-             + " vegetais todos os dias."),
-            ("Use máscara para impedir a propagação de epidemias"
-             + " respiratórias.")
-        )
-        indice_aleatorio = randint(0, len(conselhos) - 1)
-        conselho_aleatorio = conselhos[indice_aleatorio]
-        return conselho_aleatorio

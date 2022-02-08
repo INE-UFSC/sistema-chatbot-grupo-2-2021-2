@@ -32,7 +32,3 @@ class Comando:
             print('Resposta não existe')
         except Exception as e:
             print(f"Unknown Error: {e}")
-
-
-comando1 = Comando(1, "Rafael", ['Pica', 'Blindada'])
-comando1.delResposta('Sim')
